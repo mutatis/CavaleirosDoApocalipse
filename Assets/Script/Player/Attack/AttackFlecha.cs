@@ -35,24 +35,38 @@ public class AttackFlecha : MonoBehaviour
 			final = (Vector2)transform.position + (Vector2)mira2.position;
 			if(Input.GetMouseButton(0))
 			{
-			
+				Debug.Log(mouseY);
 				objMira.SetActive(true);
 
+				if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY > 0)
+				{
+					num = 0;
+				}
+				else if(mira.eulerAngles.z > 90 && mira.eulerAngles.z < 250 && mouseY < 0)
+				{
+					num = 0;
+				}
 				mira.Rotate(0, 0, num);
 
 				/*if(mira.eulerAngles.z > 1 && mira.eulerAngles.z < 90)
 				{*/
+				if(mouseY != 0)
+				{
 					if(ok)
 					{
-						num = -2.5f;
+						num = -3f;
 						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z + 1f);
 					}
 					else
 					{
-						num = 2.5f;
+						num = 3f;
 						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z - 1f);
 					}
-				//}
+				}
+				else
+				{
+					num = 0;
+				}
 				/*else if(mira.eulerAngles.z < 1 && num == -1)
 				{
 					num = 0;
