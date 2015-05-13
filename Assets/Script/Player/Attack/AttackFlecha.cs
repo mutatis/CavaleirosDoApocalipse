@@ -27,6 +27,9 @@ public class AttackFlecha : MonoBehaviour
 	
 	void Update ()
 	{
+		
+		mouseY = Input.GetAxis("Mouse Y")*2;
+
 		if(attack)
 		{
 			final = (Vector2)transform.position + (Vector2)mira2.position;
@@ -35,31 +38,29 @@ public class AttackFlecha : MonoBehaviour
 			
 				objMira.SetActive(true);
 
-				mouseY = Input.GetAxis("Mouse Y")*2;
-
 				mira.Rotate(0, 0, num);
 
-				if(mira.eulerAngles.z > 1 && mira.eulerAngles.z < 90)
-				{
+				/*if(mira.eulerAngles.z > 1 && mira.eulerAngles.z < 90)
+				{*/
 					if(ok)
 					{
-						num = -2;
+						num = -2.5f;
 						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z + 1f);
 					}
 					else
 					{
-						num = 2;
+						num = 2.5f;
 						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z - 1f);
 					}
-				}
-				else if(mira.eulerAngles.z < 1 && num == -1)
+				//}
+				/*else if(mira.eulerAngles.z < 1 && num == -1)
 				{
 					num = 0;
 				}
 				else if(mira.eulerAngles.z > 90 && num == 1)
 				{
 					num = 0;
-				}
+				}*/
 			}
 
 			if(mouseY > 0)
@@ -82,7 +83,7 @@ public class AttackFlecha : MonoBehaviour
 
 	public void StopAttack()
 	{
-		Instantiate(flecha, transform.position, transform.rotation);
+		Instantiate(flecha, new Vector2(transform.position.x, transform.position.y-2), transform.rotation);
 		StartCoroutine("GO");
 		attack = false;
 	}

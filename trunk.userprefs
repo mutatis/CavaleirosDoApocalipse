@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\BasicTrajectorySimulation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Player\Attack\AttackFlecha.cs">
     <Files>
-      <File FileName="Assets\Script\Player\Attack\Flecha.cs" Line="27" Column="39" />
-      <File FileName="Assets\Script\Player\Attack\AttackFlecha.cs" Line="1" Column="19" />
-      <File FileName="Assets\Script\BasicTrajectorySimulation.cs" Line="97" Column="2" />
+      <File FileName="Assets\Script\Player\Attack\Flecha.cs" Line="17" Column="64" />
+      <File FileName="Assets\Script\Player\Attack\AttackFlecha.cs" Line="55" Column="7" />
+      <File FileName="..\..\New folder\Assets\Scripts\Criação\CreatedDagon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Player\Movment.cs" Line="52" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

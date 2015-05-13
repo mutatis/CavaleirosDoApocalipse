@@ -11,10 +11,17 @@ public class Flecha : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		transform.position = AttackFlecha.attackF.transform.position;
+		transform.position = new Vector2(AttackFlecha.attackF.transform.position.x, AttackFlecha.attackF.transform.position.y);
 		direction2 = AttackFlecha.attackF.mira2.position + transform.position;
 		direction2.Normalize();
-		transform.eulerAngles = AttackFlecha.attackF.mira.eulerAngles / 2f;
+		if(AttackFlecha.attackF.mira.eulerAngles.z > 0 && AttackFlecha.attackF.mira.eulerAngles.z < 90)
+		{
+			transform.eulerAngles = AttackFlecha.attackF.mira.eulerAngles / 2;
+		}
+		else
+		{
+			transform.eulerAngles = AttackFlecha.attackF.mira.eulerAngles;
+		}
 	}
 	
 	// Update is called once per frame
