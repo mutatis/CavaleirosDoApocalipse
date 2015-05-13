@@ -26,4 +26,22 @@ public class Flecha : MonoBehaviour
 		}
 		transform.Translate(0.2f, 0, 0);
 	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == "Enemy")
+		{
+			Destroy(collision.gameObject);
+			Destroy(gameObject);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Enemy")
+		{
+			Destroy(collision.gameObject);
+			Destroy(gameObject);
+		}
+	}
 }
