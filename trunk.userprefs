@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\BasicTrajectorySimulation.cs">
+    <Files>
+      <File FileName="Assets\Script\Player\Attack\Flecha.cs" Line="27" Column="39" />
+      <File FileName="Assets\Script\Player\Attack\AttackFlecha.cs" Line="1" Column="19" />
+      <File FileName="Assets\Script\BasicTrajectorySimulation.cs" Line="97" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

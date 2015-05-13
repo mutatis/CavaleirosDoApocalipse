@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5083A21A-8994-7D33-6F8D-0E6AD383A462}</ProjectGuid>
+	<ProjectGuid>{C9C5ACED-AF37-B251-9AC8-2374AADD4A08}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,15 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scenes\PlayerFire.cs" />
      <Compile Include="Assets\Script\BackgroundLua.cs" />
+     <Compile Include="Assets\Script\BasicTrajectorySimulation.cs" />
      <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Script\Enemy\Arvore.cs" />
      <Compile Include="Assets\Script\Enemy\Criador.cs" />
      <Compile Include="Assets\Script\Enemy\Terrestre.cs" />
-     <Compile Include="Assets\Script\Flecha.cs" />
-     <Compile Include="Assets\Script\Player\AttackFlecha.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha.cs" />
+     <Compile Include="Assets\Script\Player\Attack\Flecha.cs" />
+     <Compile Include="Assets\Script\Player\Attack\SingleMeleeAttack.cs" />
      <Compile Include="Assets\Script\Player\Movment.cs" />
-     <Compile Include="Assets\Script\Player\SingleMeleeAttack.cs" />
      <Compile Include="Assets\Script\SpriteRowCreator.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.5/UnityEngine.UI.dll</HintPath>
