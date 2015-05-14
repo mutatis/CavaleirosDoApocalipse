@@ -50,6 +50,7 @@
      <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Script\Enemy\Arvore.cs" />
      <Compile Include="Assets\Script\Enemy\Criador.cs" />
+     <Compile Include="Assets\Script\Enemy\Dano.cs" />
      <Compile Include="Assets\Script\Enemy\Terrestre.cs" />
      <Compile Include="Assets\Script\Player\Attack\AttackFlecha.cs" />
      <Compile Include="Assets\Script\Player\Attack\Flecha.cs" />
