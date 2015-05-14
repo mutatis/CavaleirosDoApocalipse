@@ -18,7 +18,9 @@ public class AttackFlecha : MonoBehaviour
 	public GameObject flecha;
 	public static AttackFlecha attackF;
 	float num;
+	Vector2 dir;
 	bool attack;
+	bool roda = true;
 
 	void Awake()
 	{
@@ -35,37 +37,45 @@ public class AttackFlecha : MonoBehaviour
 			final = (Vector2)transform.position + (Vector2)mira2.position;
 			if(Input.GetMouseButton(0))
 			{
+				dir = (Vector2)transform.position + new Vector2(4, mouseY);
+				if(roda && mouseY != 0)
+				{
+					mira.eulerAngles = new Vector3(0, 0, dir.y);
+					StartCoroutine("PA");
+				}
+
 				Debug.Log(mouseY);
-				objMira.SetActive(true);
-
-				if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY > 0)
+				if(roda == false)
 				{
-					num = 0;
-				}
-				else if(mira.eulerAngles.z > 90 && mira.eulerAngles.z < 250 && mouseY < 0)
-				{
-					num = 0;
-				}
-				mira.Rotate(0, 0, num);
-
-				/*if(mira.eulerAngles.z > 1 && mira.eulerAngles.z < 90)
-				{*/
-				if(mouseY != 0)
-				{
-					if(ok)
+					if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY > 0)
 					{
-						num = -3f;
-						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z + 1f);
+						num = 0;
+					}
+					else if(mira.eulerAngles.z > 90 && mira.eulerAngles.z < 250 && mouseY < 0)
+					{
+						num = 0;
+					}
+					mira.Rotate(0, 0, num);
+
+					/*if(mira.eulerAngles.z > 1 && mira.eulerAngles.z < 90)
+					{*/
+					if(mouseY != 0)
+					{
+						if(ok)
+						{
+							num = -3f;
+							//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z + 1f);
+						}
+						else
+						{
+							num = 3f;
+							//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z - 1f);
+						}
 					}
 					else
 					{
-						num = 3f;
-						//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z - 1f);
+						num = 0;
 					}
-				}
-				else
-				{
-					num = 0;
 				}
 				/*else if(mira.eulerAngles.z < 1 && num == -1)
 				{
@@ -102,10 +112,19 @@ public class AttackFlecha : MonoBehaviour
 		attack = false;
 	}
 
+	IEnumerator PA()
+	{
+		yield return new WaitForSeconds(0.05f);
+		objMira.SetActive(true);
+		yield return new WaitForSeconds(0.05f);
+		roda = false;
+	}
+
 	IEnumerator GO()
 	{
 		yield return new WaitForSeconds(0.2f);
-		mira.eulerAngles = new Vector3(0, 0, 3);
+		roda = true;
+		//mira.eulerAngles = new Vector3(0, 0, 3);
 		objMira.SetActive(false);
 	}
 }

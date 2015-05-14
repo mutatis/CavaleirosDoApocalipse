@@ -38,7 +38,7 @@ public class Flecha : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Enemy")
 		{
-			Destroy(collision.gameObject);
+			//Destroy(collision.gameObject);
 			Destroy(gameObject);
 		}
 	}
@@ -47,7 +47,7 @@ public class Flecha : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Enemy")
 		{
-			Destroy(collision.gameObject);
+			//Destroy(collision.gameObject);
 			Destroy(gameObject);
 		}
 	}
