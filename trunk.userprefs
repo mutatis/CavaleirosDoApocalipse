@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\TesteSwipe\Assets\SwipeAction\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Camera\CameraFollow.cs">
     <Files>
-      <File FileName="..\..\TesteSwipe\Assets\SwipeAction\Scripts\PlayerController.cs" Line="42" Column="55" />
+      <File FileName="Assets\Script\Player\Attack\AttackFlecha.cs" Line="91" Column="16" />
+      <File FileName="Assets\Script\Camera\CameraFollow.cs" Line="18" Column="92" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
