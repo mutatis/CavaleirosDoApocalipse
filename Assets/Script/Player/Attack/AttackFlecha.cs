@@ -21,6 +21,9 @@ public class AttackFlecha : MonoBehaviour
 	Vector2 dir;
 	bool attack;
 	bool roda = true;
+	float mousex;
+	float mousey;
+	Vector3 mouseposition;
 
 	void Awake()
 	{
@@ -34,24 +37,41 @@ public class AttackFlecha : MonoBehaviour
 
 		if(attack)
 		{
+			objMira.SetActive(true);
 			final = (Vector2)transform.position + (Vector2)mira2.position;
 			if(Input.GetMouseButton(0))
 			{
+				mousex = (Input.mousePosition.x);
+				mousey = (Input.mousePosition.y);
+				mouseposition = Camera.main.ScreenToWorldPoint(new Vector3 (mousex,mousey,0));
 				dir = (Vector2)transform.position + new Vector2(4, mouseY);
-				if(roda && mouseY != 0)
+				if(roda)
 				{
-					mira.eulerAngles = new Vector3(0, 0, dir.y);
+					if(mouseposition.y < transform.position.y - 1)
+					{
+						mira.eulerAngles = new Vector3(0, 0, 35);
+					}
+					else if(mouseposition.y > transform.position.y + 1)
+					{
+						mira.eulerAngles = new Vector3(0, 0, -35);
+					}
+					else
+					{
+						mira.eulerAngles = new Vector3(0, 0, 0);
+					}
+					roda = false;
+					//mira.eulerAngles = new Vector3(0, 0, dir.y);
 					StartCoroutine("PA");
 				}
 
-				Debug.Log(mouseY);
+				Debug.Log(mouseposition.y);
 				if(roda == false)
 				{
-					if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY > 0)
+					if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY < 0)
 					{
 						num = 0;
 					}
-					else if(mira.eulerAngles.z > 90 && mira.eulerAngles.z < 250 && mouseY < 0)
+					else if(mira.eulerAngles.z > 90 && mira.eulerAngles.z < 250 && mouseY > 0)
 					{
 						num = 0;
 					}
@@ -63,12 +83,12 @@ public class AttackFlecha : MonoBehaviour
 					{
 						if(ok)
 						{
-							num = -3f;
+							num = 4f;
 							//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z + 1f);
 						}
 						else
 						{
-							num = 3f;
+							num = -4f;
 							//mira.eulerAngles = new Vector3(0, 0, mira.rotation.z - 1f);
 						}
 					}
