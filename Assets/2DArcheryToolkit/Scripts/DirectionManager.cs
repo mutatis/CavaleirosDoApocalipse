@@ -79,20 +79,26 @@ public class DirectionManager : MonoBehaviour
 		/// </summary>
 		private void CheckArrowBounds ()
 		{
-		       //Get the position of the arrow
-				arrowPosition = transform.position;
+			//Get the position of the arrow
+			arrowPosition = transform.position;
 
-				xIn = (arrowPosition.x >= topLeftScreenPoint.x - offset.x && arrowPosition.x <= bottomRightScreenPoint.x + offset.x);
-				yIn = (arrowPosition.y >= bottomRightScreenPoint.y - offset.y && arrowPosition.y <= topLeftScreenPoint.y + offset.y);
+			xIn = (arrowPosition.x >= topLeftScreenPoint.x - offset.x && arrowPosition.x <= bottomRightScreenPoint.x + offset.x);
+			yIn = (arrowPosition.y >= bottomRightScreenPoint.y - offset.y && arrowPosition.y <= topLeftScreenPoint.y + offset.y);
 			
-				if (!(xIn && yIn)) {
-						///Create new arrow
-						GetComponent<Arrow> ().bowControllerComponent.CreateArrow ();
-						///Destroy the current arrow
-						Destroy (gameObject);
-						///Check the number of arrows
-//						GameManager.instance.CheckArrowsNumber();
-						return;
-				}
+			if(velocity.x < 5 && velocity.y < 5)
+			{
+				Destroy(gameObject);
+			}
+
+			if (!(xIn && yIn))
+			{
+				///Create new arrow
+				GetComponent<Arrow> ().bowControllerComponent.CreateArrow ();
+				///Destroy the current arrow
+				Destroy (gameObject);
+				///Check the number of arrows
+//				GameManager.instance.CheckArrowsNumber();
+				return;
+			}
 		}
 }
