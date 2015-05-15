@@ -42,14 +42,14 @@ public class Target : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				///Setting up the references
+			/*	///Setting up the references
 				if (lp == null) {
 						lp = GameObject.Find ("TargetArea").transform.Find ("LP").transform;
 				}
 
 				if (tp == null) {
 						tp = GameObject.Find ("TargetArea").transform.Find ("TP").transform;
-				}
+				}*/
 		         
 				//Set random position for the target using the lp(lower point) and the tp(top point)
 				SetRandomPosition ();
@@ -68,8 +68,8 @@ public class Target : MonoBehaviour
 		/// </summary>
 		public void SetRandomPosition ()
 		{
-				minPostion = lp.position;
-				maxPostion = tp.position;
+/*				minPostion = lp.position;
+				maxPostion = tp.position;*/
 				tragetPosition = transform.position;
 				tragetPosition.x = Random.Range (minPostion.x, maxPostion.x);///random x-position
 				tragetPosition.y = Random.Range (minPostion.y, maxPostion.y);///random y-position
@@ -81,8 +81,8 @@ public class Target : MonoBehaviour
 		/// </summary>
 		private void DrawArea ()
 		{
-				minPostion = lp.position;
-				maxPostion = tp.position;
+/*				minPostion = lp.position;
+				maxPostion = tp.position;*/
 				Debug.DrawLine (minPostion, new Vector3 (maxPostion.x, minPostion.y, minPostion.z), linesColor);
 				Debug.DrawLine (new Vector3 (minPostion.x, maxPostion.y, maxPostion.z), maxPostion, linesColor);
 				Debug.DrawLine (minPostion, new Vector3 (minPostion.x, maxPostion.y, minPostion.z), linesColor);

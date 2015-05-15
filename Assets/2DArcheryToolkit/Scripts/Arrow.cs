@@ -111,4 +111,13 @@ public class Arrow : MonoBehaviour
 				///Destroy the current arrow
 				Destroy (gameObject);
 		}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		if (col.gameObject.tag == ("Enemy")) 
+		{
+			Destroy (col.gameObject);
+			Destroy (gameObject);
+		}
+	}
 }

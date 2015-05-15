@@ -167,11 +167,12 @@ public class BowController : MonoBehaviour
 		void FixedUpdate ()
 		{
 				///Whether to launch the arrow
-				if (lanuchTheArrow) {
-						///Reset lanuchTheArrow flag 
-						lanuchTheArrow = false;
-						///Launch the arrow
-						LaunchTheArrow ();
+				if (lanuchTheArrow) 
+				{
+					///Reset lanuchTheArrow flag 
+					lanuchTheArrow = false;
+					///Launch the arrow
+					LaunchTheArrow ();
 				}
 		}
 
@@ -181,8 +182,8 @@ public class BowController : MonoBehaviour
 		/// <param name="pos">Click position in pixels.</param>
 		private void ClickBegan (Vector3 pos)
 		{
-		CreateArrow ();
-				clickBegan = true;
+			CreateArrow ();
+			clickBegan = true;
 		}
 
 		/// <summary>

@@ -31,6 +31,7 @@ public class Dano : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Tiro")
 		{
+			Destroy(collision.gameObject);
 			tiro++;
 			StartCoroutine("GO");
 		}
@@ -40,6 +41,7 @@ public class Dano : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Tiro")
 		{
+			Destroy(collision.gameObject);
 			tiro++;
 			StartCoroutine("GO");
 		}

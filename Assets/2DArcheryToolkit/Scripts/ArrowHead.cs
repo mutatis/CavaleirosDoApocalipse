@@ -67,14 +67,14 @@ public class ArrowHead : MonoBehaviour
 						plusArrowEffectGameObject = GameObject.Find ("PlusArrowEffect");
 				}
 
-				plusScoreEffectAnimator = plusScoreEffectGameObject.GetComponent<Animator> ();
+/*				plusScoreEffectAnimator = plusScoreEffectGameObject.GetComponent<Animator> ();
 				plusArrowEffectAnimator = plusArrowEffectGameObject.GetComponent<Animator> ();
-				plusScoreEffectSpriteRenderer = plusScoreEffectGameObject.GetComponent<SpriteRenderer> ();
+				plusScoreEffectSpriteRenderer = plusScoreEffectGameObject.GetComponent<SpriteRenderer> ();*/
 		}
 	
 		void OnCollisionEnter2D (Collision2D col)
 		{
-				///On collision with the target collider
+			/*	///On collision with the target collider
 				if (col.transform.tag == "TargetCollider" && col.gameObject.tag == "Enemy") {
 						///Get the first contacts point
 						arrowTransform.transform.position = col.contacts [0].point;
@@ -119,7 +119,7 @@ public class ArrowHead : MonoBehaviour
 						GetComponentInParent<Animator> ().SetTrigger ("Hide");
 			           ///Check the number of arrows
 						GameManager.instance.CheckArrowsNumber();
-				}
+				}*/
 		}
 
 

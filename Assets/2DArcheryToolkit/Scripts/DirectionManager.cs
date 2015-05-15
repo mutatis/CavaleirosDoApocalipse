@@ -91,7 +91,7 @@ public class DirectionManager : MonoBehaviour
 						///Destroy the current arrow
 						Destroy (gameObject);
 						///Check the number of arrows
-						GameManager.instance.CheckArrowsNumber();
+//						GameManager.instance.CheckArrowsNumber();
 						return;
 				}
 		}

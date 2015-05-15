@@ -8,7 +8,7 @@ using System;
 /// </summary>
 public class ScorePanel : MonoBehaviour
 {
-		public Text previousScoreText;
+		/*public Text previousScoreText;
 		public Text bestScoreText;
 
 		// Use this for initialization
@@ -26,5 +26,5 @@ public class ScorePanel : MonoBehaviour
 				} catch (Exception ex) {
 						Debug.Log (ex.Message);
 				}
-		}
+		}*/
 }
