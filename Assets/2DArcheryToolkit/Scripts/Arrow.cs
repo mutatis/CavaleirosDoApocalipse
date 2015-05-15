@@ -6,6 +6,7 @@ using System.Collections;
 /// </summary>
 public class Arrow : MonoBehaviour
 {
+        
 		/// <summary>
 		/// The target component.
 		/// </summary>
@@ -42,6 +43,8 @@ public class Arrow : MonoBehaviour
 		/// The power factor.
 		/// </summary>
 		private float powerFactor = 2000;
+        
+        
 
 		void Start ()
 		{
@@ -101,11 +104,6 @@ public class Arrow : MonoBehaviour
 		/// </summary>
 		public void DestroyArrow ()
 		{
-				if (target != null) {
-						///Set a random position for the target
-						target.SetRandomPosition ();
-				}
-
 				///Create new arrow
 				bowControllerComponent.CreateArrow ();
 				///Destroy the current arrow

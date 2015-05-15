@@ -182,7 +182,11 @@ public class BowController : MonoBehaviour
 		/// <param name="pos">Click position in pixels.</param>
 		private void ClickBegan (Vector3 pos)
 		{
-			CreateArrow ();
+            if(pos.x < Screen.width / 2) 
+            {
+                CreateArrow();
+            }
+			
 			clickBegan = true;
 		}
 
@@ -239,10 +243,6 @@ public class BowController : MonoBehaviour
 		/// </summary>
 		public void CreateArrow ()
 		{
-		/*		if (DataManager.NumberOfArrows == 0) {
-						return;
-				}*/
-
 				currentArrow = Instantiate (bowArrowPrefab, bowArrowPrefab.transform.position, bowArrowPrefab.transform.rotation) as GameObject;
 				//Set the name of the arrow
 				currentArrow.name = "Arrow";
