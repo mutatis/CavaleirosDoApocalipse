@@ -6,7 +6,6 @@ using System.Collections;
 /// </summary>
 public class Arrow : MonoBehaviour
 {
-        
 		/// <summary>
 		/// The target component.
 		/// </summary>
@@ -30,13 +29,13 @@ public class Arrow : MonoBehaviour
 		/// <summary>
 		/// Whether the arrow is launched.
 		/// </summary>
-		[HideInInspector]
+		//[HideInInspector]
 		public bool launched;
 
 		/// <summary>
 		/// The launch power for the arrow.
 		/// </summary>
-		[HideInInspector]
+		//[HideInInspector]
 		public float power;
 
 		/// <summary>
@@ -70,10 +69,11 @@ public class Arrow : MonoBehaviour
 
 		void Update ()
 		{
-				if (!launched) {
-						ClampPosition ();
-						CalculatePower ();
-				}
+            if (!launched) {
+                ClampPosition();
+                CalculatePower();
+            }
+                
 		}
 
 		/// <summary>
@@ -105,7 +105,7 @@ public class Arrow : MonoBehaviour
 		public void DestroyArrow ()
 		{
 				///Create new arrow
-				bowControllerComponent.CreateArrow ();
+				//bowControllerComponent.CreateArrow ();
 				///Destroy the current arrow
 				Destroy (gameObject);
 		}

@@ -3,11 +3,12 @@ using System.Collections;
 
 public class BowController : MonoBehaviour
 {
-		/// <summary>
+
+    /// <summary>
 		/// The bow arrow prefab.
 		/// </summary>
 		public GameObject bowArrowPrefab;
-
+        
 		/// <summary>
 		/// The current arrow.
 		/// </summary>
@@ -16,7 +17,7 @@ public class BowController : MonoBehaviour
 		/// <summary>
 		/// The angle variable.
 		/// </summary>
-		private float angle;
+        private float angle;
 
 		/// <summary>
 		/// The angle offset variable.
@@ -62,7 +63,7 @@ public class BowController : MonoBehaviour
 		/// The distance variable.
 		/// </summary>
 		private Vector3 distance;
-
+        
 		/// <summary>
 		/// The arrow position.
 		/// </summary>
@@ -182,11 +183,6 @@ public class BowController : MonoBehaviour
 		/// <param name="pos">Click position in pixels.</param>
 		private void ClickBegan (Vector3 pos)
 		{
-            if(pos.x < Screen.width / 2) 
-            {
-                CreateArrow();
-            }
-			
 			clickBegan = true;
 		}
 
@@ -212,15 +208,21 @@ public class BowController : MonoBehaviour
 				tempEulerAngle = transform.eulerAngles;
 				tempEulerAngle.z = angle;
 				transform.eulerAngles = tempEulerAngle;
-			
+
+                distance = ropeTransform.position - clickPosition;
 				if (currentArrow != null) {
 						///Pull or drag the arrow relative to click position
-						distance = ropeTransform.position - clickPosition;
+						
 						arrowPosition = currentArrow.transform.position;
 						arrowPosition.x = arrowComponent.rightClampPoint.position.x - distance.x;
 						arrowPosition.y = arrowComponent.rightClampPoint.position.y - distance.y;
 						currentArrow.transform.position = arrowPosition;
 				}
+                else 
+                {
+                    if ( pos.x < Screen.width / 2 && distance.magnitude > .5F)
+                        CreateArrow();
+                }
 		}
 
 		/// <summary>
@@ -234,8 +236,9 @@ public class BowController : MonoBehaviour
 						clickPosition = Camera.main.ScreenToWorldPoint (pos);
 						if (clickPosition.x < clickLimitPoint.position.x) {//if the click position is less than the click limit point
 								lanuchTheArrow = true;
-						}
+						}   
 				}
+                print("clique não começou mas a flecha é: " + currentArrow.ToString());
 		}
 
 		/// <summary>
@@ -243,9 +246,11 @@ public class BowController : MonoBehaviour
 		/// </summary>
 		public void CreateArrow ()
 		{
+            if (currentArrow != null && !arrowComponent.launched)
+                Destroy(currentArrow);
 				currentArrow = Instantiate (bowArrowPrefab, bowArrowPrefab.transform.position, bowArrowPrefab.transform.rotation) as GameObject;
 				//Set the name of the arrow
-				currentArrow.name = "Arrow";
+				currentArrow.name = "Arrow" + Time.time;
 				//Set the parent of the arrow
 				currentArrow.transform.SetParent (transform);
 				//Set the scale of the arrow
@@ -268,12 +273,10 @@ public class BowController : MonoBehaviour
 				}*/
 
 				arrowForce = currentArrow.transform.up * arrowComponent.power;
+                
 		
 				///Check the arrow's force magnitude(launch requirements : force magnitude less than or equas 150)
-			/*	if (arrowForce.magnitude <= 150) {
-						return;
-				}*/
-	
+				
 				///Decrease the number of arrows
 			//	DataManager.NumberOfArrows--;
 			
