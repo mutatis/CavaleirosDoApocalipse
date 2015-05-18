@@ -67,6 +67,7 @@
      <Compile Include="Assets\Script\Player\Movment.cs" />
      <Compile Include="Assets\Script\Props\Ground.cs" />
      <Compile Include="Assets\Script\SpriteRowCreator.cs" />
+     <None Include="Assets\Editor\Todo\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.5/UnityEngine.UI.dll</HintPath>
  </Reference>
