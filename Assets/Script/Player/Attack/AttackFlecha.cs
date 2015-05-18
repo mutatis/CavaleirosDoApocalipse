@@ -18,7 +18,7 @@ public class AttackFlecha : MonoBehaviour
 	public GameObject flecha;
 	public static AttackFlecha attackF;
 	float num;
-	Vector2 dir;
+	//Vector2 dir;
 	bool attack;
 	bool roda = true;
 	float mousex;
@@ -44,7 +44,7 @@ public class AttackFlecha : MonoBehaviour
 				mousex = (Input.mousePosition.x);
 				mousey = (Input.mousePosition.y);
 				mouseposition = Camera.main.ScreenToWorldPoint(new Vector3 (mousex,mousey,0));
-				dir = (Vector2)transform.position + new Vector2(4, mouseY);
+				//dir = (Vector2)transform.position + new Vector2(4, mouseY);
 				if(roda)
 				{
 					if(mouseposition.y < transform.position.y - 1)

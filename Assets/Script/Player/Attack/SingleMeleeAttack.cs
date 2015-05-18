@@ -6,7 +6,7 @@ public class SingleMeleeAttack : MonoBehaviour
 {
     public float attackDistance = 16;
     private RaycastHit2D[] targets;
-    private bool isAttacking = false;
+    //private bool isAttacking = false;
 	public int attack;
 
    	public void Attack ()
@@ -18,7 +18,7 @@ public class SingleMeleeAttack : MonoBehaviour
 
 			}
 			//attack.SetTrigger ("Attack");
-	        isAttacking = true;
+	        //isAttacking = true;
 	        //yield return new WaitForSeconds(0.2f);
 			targets = Physics2D.RaycastAll((Vector2)transform.position, Vector2.right, attackDistance, 1 << LayerMask.NameToLayer("Enemy"));
 	        if (targets.Length == 0)
@@ -45,7 +45,7 @@ public class SingleMeleeAttack : MonoBehaviour
 					Destroy(targets[i].collider.gameObject);
 				}
 			}
-	        isAttacking = false;
+	        //isAttacking = false;
 		//}
     }
 }

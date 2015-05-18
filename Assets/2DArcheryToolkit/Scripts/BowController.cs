@@ -77,7 +77,7 @@ public class BowController : MonoBehaviour
 		/// <summary>
 		/// Whether the current platform is  mobile.
 		/// </summary>
-		private bool mobilePlatform;
+		//private bool mobilePlatform;
 
 		/// <summary>
 		/// The arrow swoosh sound effect.
@@ -108,7 +108,7 @@ public class BowController : MonoBehaviour
 		void Start ()
 		{
 				///Setting up the references
-				mobilePlatform = Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer;
+				//mobilePlatform = Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer;
 
 				if (ropeTransform == null) {
 						ropeTransform = transform.Find ("Rope");
@@ -134,7 +134,7 @@ public class BowController : MonoBehaviour
 		void Update ()
 		{
 				///When the current platform is mobile (Android | IOS)
-				if (mobilePlatform) {
+				/*if (mobilePlatform) {
 						if (Input.touchCount != 0) {
 								///Get the screen's first touch
 								screenTouch = Input.GetTouch (0);
@@ -144,12 +144,12 @@ public class BowController : MonoBehaviour
 								} else if (screenTouch.phase == TouchPhase.Moved) {
 										///Click moved
 										ClickMoved (screenTouch.position);
-								} else if (screenTouch.phase == TouchPhase.Ended) {
+								} else if (screenTouch.phase == TouchPhase.Ended || screenTouch.phase == TouchPhase.Canceled) {
 										///Click released
 										ClickReleased (screenTouch.position);
 								}
 						}
-				} else {
+				} else {*/
 						if (Input.GetMouseButtonDown (0)) {
 								//Mouse click began
 								ClickBegan (Input.mousePosition);
@@ -162,7 +162,7 @@ public class BowController : MonoBehaviour
 								//Mouse click moved
 								ClickMoved (Input.mousePosition);
 						}
-				}
+				//}
 		}
 
 		void FixedUpdate ()
