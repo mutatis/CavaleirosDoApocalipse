@@ -46,16 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\Arrow.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\ArrowHead.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\BowController.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\BowRope.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\DirectionManager.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\Events.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\GameEffect.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\ScorePanel.cs" />
-     <Compile Include="Assets\2DArcheryToolkit\Scripts\Target.cs" />
-     <Compile Include="Assets\Script\Arco.cs" />
      <Compile Include="Assets\Script\BackgroundLua.cs" />
      <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Script\Enemy\Arvore.cs" />
@@ -63,6 +53,12 @@
      <Compile Include="Assets\Script\Enemy\Dano.cs" />
      <Compile Include="Assets\Script\Enemy\Terrestre.cs" />
      <Compile Include="Assets\Script\Interface\MudaCena.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\Arco.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\Arrow.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\BowController.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\BowRope.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\DirectionManager.cs" />
+     <Compile Include="Assets\Script\Player\Attack\AttackFlecha\Target.cs" />
      <Compile Include="Assets\Script\Player\Attack\Fome\Mordida.cs" />
      <Compile Include="Assets\Script\Player\Attack\Guerra\Guerra.cs" />
      <Compile Include="Assets\Script\Player\Attack\Peste\AttackFlecha.cs" />
@@ -71,7 +67,6 @@
      <Compile Include="Assets\Script\Player\Movment.cs" />
      <Compile Include="Assets\Script\Props\Ground.cs" />
      <Compile Include="Assets\Script\SpriteRowCreator.cs" />
-     <None Include="Assets\2DArcheryToolkit\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.5/UnityEngine.UI.dll</HintPath>
  </Reference>
