@@ -57,7 +57,7 @@ public class BowController : MonoBehaviour
 		/// <summary>
 		/// Whether to lanuch the arrow.
 		/// </summary>
-		private bool lanuchTheArrow;
+		private bool launchTheArrow;
 
 		/// <summary>
 		/// The distance variable.
@@ -168,10 +168,10 @@ public class BowController : MonoBehaviour
 		void FixedUpdate ()
 		{
 				///Whether to launch the arrow
-				if (lanuchTheArrow) 
+				if (launchTheArrow) 
 				{
 					///Reset lanuchTheArrow flag 
-					lanuchTheArrow = false;
+					launchTheArrow = false;
 					///Launch the arrow
 					LaunchTheArrow ();
 				}
@@ -220,7 +220,7 @@ public class BowController : MonoBehaviour
 				}
                 else 
                 {
-                    if ( pos.x < Screen.width / 2 && distance.magnitude > .5F)
+                    if ( pos.x < Screen.width / 2)
                         CreateArrow();
                 }
 		}
@@ -230,15 +230,22 @@ public class BowController : MonoBehaviour
 		/// </summary>
 		private void ClickReleased (Vector3 pos)
 		{
-				if (clickBegan) {
+            print("clickreleased" + Time.time.ToString());
+                if (clickBegan) 
+                {
 						//reset flags
 						clickBegan = false;
-						clickPosition = Camera.main.ScreenToWorldPoint (pos);
+                        clickPosition = Camera.main.ScreenToWorldPoint(pos);
 						if (clickPosition.x < clickLimitPoint.position.x) {//if the click position is less than the click limit point
-								lanuchTheArrow = true;
-						}   
+								launchTheArrow = true;
+						}
+                        else 
+                        {
+                            //Destroy(currentArrow);
+                            launchTheArrow = true;
+                        }
 				}
-                print("clique não começou mas a flecha é: " + currentArrow.ToString());
+               
 		}
 
 		/// <summary>
@@ -248,6 +255,7 @@ public class BowController : MonoBehaviour
 		{
             if (currentArrow != null && !arrowComponent.launched)
                 Destroy(currentArrow);
+
 				currentArrow = Instantiate (bowArrowPrefab, bowArrowPrefab.transform.position, bowArrowPrefab.transform.rotation) as GameObject;
 				//Set the name of the arrow
 				currentArrow.name = "Arrow" + Time.time;
@@ -271,7 +279,7 @@ public class BowController : MonoBehaviour
 				/*if (currentArrow == null || DataManager.NumberOfArrows == 0) {
 						return;
 				}*/
-
+                
 				arrowForce = currentArrow.transform.up * arrowComponent.power;
                 
 		

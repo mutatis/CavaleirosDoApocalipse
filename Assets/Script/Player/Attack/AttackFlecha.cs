@@ -64,7 +64,7 @@ public class AttackFlecha : MonoBehaviour
 					StartCoroutine("PA");
 				}
 
-				Debug.Log(mouseposition.y);
+				
 				if(roda == false)
 				{
 					if(mira.eulerAngles.z < 300 && mira.eulerAngles.z > 110 && mouseY < 0)
