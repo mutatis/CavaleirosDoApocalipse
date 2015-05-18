@@ -7,7 +7,7 @@ public class Movment : MonoBehaviour
 	public float x;
 	public static Movment playerTrans;
 	public float jumpF;
-	public Slider sli;
+	//public Slider sli;
 	bool jump = true;
 	float life = 1;
 
@@ -25,14 +25,14 @@ public class Movment : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(sli.value > life)
+		/*if(sli.value > life)
 		{
 			sli.value -= 0.01f;
 		}
 		else
 		{
 			sli.value = life;
-		}
+		}*/
 		transform.Translate(x * Time.deltaTime, 0, 0);
 		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
 		{
@@ -55,7 +55,7 @@ public class Movment : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			life -= 0.1f;
-			Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
 		}
 		if(collision.gameObject.tag == "Ground")
 		{
