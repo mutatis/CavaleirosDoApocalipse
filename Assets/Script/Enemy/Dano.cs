@@ -35,6 +35,11 @@ public class Dano : MonoBehaviour {
 			tiro++;
 			StartCoroutine("GO");
 		}
+		else if(collision.gameObject.tag == "Slash")
+		{
+			tiro += 2;
+			StartCoroutine("GO");
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +48,11 @@ public class Dano : MonoBehaviour {
 		{
 			Destroy(collision.gameObject);
 			tiro++;
+			StartCoroutine("GO");
+		}
+		else if(collision.gameObject.tag == "Slash")
+		{
+			tiro += 2;
 			StartCoroutine("GO");
 		}
 	}
