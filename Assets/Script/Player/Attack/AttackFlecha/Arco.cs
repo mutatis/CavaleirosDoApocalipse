@@ -11,6 +11,6 @@ public class Arco : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.position = Movment.playerTrans.transform.position;
+		transform.position = PlayerAll.playerTrans.transform.position;
 	}
 }

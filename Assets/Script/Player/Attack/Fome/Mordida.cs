@@ -15,7 +15,7 @@ public class Mordida : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.position = Movment.playerTrans.transform.position;
+		transform.position = PlayerAll.playerTrans.transform.position;
 	}
 
 	public void Attack()

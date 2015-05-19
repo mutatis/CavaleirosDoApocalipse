@@ -12,7 +12,7 @@ public class Terrestre : MonoBehaviour
 	void Start () 
 	{
 		Vector3 theScale = transform.localScale;
-		x = Movment.playerTrans.x;
+		x = PlayerAll.playerTrans.x;
 		mult = Random.Range (-2, 2);
 		if(mult == 0)
 		{
