@@ -8,8 +8,9 @@ public class Criador : MonoBehaviour
 	public float y;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class Criador : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			Instantiate(cria, new Vector3(transform.position.x + 2, y, 0), transform.rotation);
+			Instantiate(cria, new Vector3(transform.position.x + 6, y, 0), transform.rotation);
 		}
 	}
 
@@ -29,7 +30,7 @@ public class Criador : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			Instantiate(cria, new Vector3(transform.position.x + 2, y, 0), transform.rotation);
+			Instantiate(cria, new Vector3(transform.position.x + 6, y, 0), transform.rotation);
 		}
 	}
 }

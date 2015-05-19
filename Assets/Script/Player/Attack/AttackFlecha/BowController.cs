@@ -230,21 +230,21 @@ public class BowController : MonoBehaviour
 		/// </summary>
 		private void ClickReleased (Vector3 pos)
 		{
-            print("clickreleased" + Time.time.ToString());
-                if (clickBegan) 
-                {
-						//reset flags
-						clickBegan = false;
-                        clickPosition = Camera.main.ScreenToWorldPoint(pos);
-						if (clickPosition.x < clickLimitPoint.position.x) {//if the click position is less than the click limit point
-								launchTheArrow = true;
-						}
-                        else 
-                        {
-                            //Destroy(currentArrow);
-                            launchTheArrow = true;
-                        }
+        	if (clickBegan) 
+            {
+				//reset flags
+				clickBegan = false;
+                clickPosition = Camera.main.ScreenToWorldPoint(pos);
+				if (clickPosition.x < clickLimitPoint.position.x) 
+				{//if the click position is less than the click limit point
+					launchTheArrow = true;
 				}
+	            else 
+	            {
+	            	//Destroy(currentArrow);
+	                launchTheArrow = true;
+	            }
+			}
                
 		}
 
