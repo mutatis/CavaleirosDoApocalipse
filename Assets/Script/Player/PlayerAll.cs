@@ -8,7 +8,8 @@ public class PlayerAll : MonoBehaviour
 	public static PlayerAll playerTrans;
 	public float jumpF;
 	public Slider sli;
-	bool jump = true;
+	[HideInInspector]
+	public bool jump = true;
 	float life = 1;
 	public SpriteRenderer sprite;
 	float tempo = 0.3f;
@@ -67,6 +68,20 @@ public class PlayerAll : MonoBehaviour
 			life -= 0.1f;
 			StartCoroutine("GO");
             Destroy(collision.gameObject);
+		}
+		if(collision.gameObject.tag == "Ground")
+		{
+			jump = true;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Enemy")
+		{
+			life -= 0.1f;
+			StartCoroutine("GO");
+			Destroy(collision.gameObject);
 		}
 		if(collision.gameObject.tag == "Ground")
 		{

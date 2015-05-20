@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour 
 {
 
-	public float smooth;
+	public Vector2 smooth;
 
 	// Use this for initialization
 	void Start () 
@@ -15,6 +15,6 @@ public class CameraFollow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.position = new Vector3(PlayerAll.playerTrans.transform.position.x + smooth, -1.5f, -10);
+		transform.position = new Vector3(PlayerAll.playerTrans.transform.position.x + smooth.x, smooth.y, -10);
 	}
 }

@@ -7,6 +7,8 @@ public class Terrestre : MonoBehaviour
 	int mult;
 	public Animator anim;
 	bool anda;
+	bool pos = true;
+	public int tipo;
 
 	// Use this for initialization
 	void Start () 
@@ -41,6 +43,11 @@ public class Terrestre : MonoBehaviour
 		if(anda)
 		{
 			transform.Translate(((x / 2) * mult) * Time.deltaTime, 0, 0);
+			if(PlayerAll.playerTrans.jump && pos && tipo == 1)
+			{
+				transform.position = new Vector3(transform.position.x, PlayerAll.playerTrans.transform.position.y, transform.position.z);
+				pos = false;
+			}
 		}
 	}
 
