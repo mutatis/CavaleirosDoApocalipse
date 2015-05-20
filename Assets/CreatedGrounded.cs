@@ -27,7 +27,7 @@ public class CreatedGrounded : MonoBehaviour
 		{
 			x = Random.Range(limitX.x, limitX.y);
 			y = Random.Range(limitY.x, limitY.y);
-			Instantiate(chao, new Vector3(transform.position.x + x, y, 0), transform.rotation);
+			Instantiate(chao, new Vector3(transform.position.x + x, transform.position.y + y, 0), transform.rotation);
 		}
 	}
 	
@@ -37,7 +37,7 @@ public class CreatedGrounded : MonoBehaviour
 		{
 			x = Random.Range(limitX.x, limitX.y);
 			y = Random.Range(limitY.x, limitY.y);
-			Instantiate(chao, new Vector3(transform.position.x + x, y, 0), transform.rotation);
+			Instantiate(chao, new Vector3(transform.position.x + x, transform.position.y + y, 0), transform.rotation);
 		}
 	}
 }
