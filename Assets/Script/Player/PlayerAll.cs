@@ -4,14 +4,21 @@ using UnityEngine.UI;
 
 public class PlayerAll : MonoBehaviour 
 {
-	public float x;
 	public static PlayerAll playerTrans;
+
 	public float jumpF;
+	public float x;
+
 	public Slider sli;
+
+	public BoxCollider2D box;
+
+	public SpriteRenderer sprite;
+
 	[HideInInspector]
 	public bool jump = true;
+
 	float life = 1;
-	public SpriteRenderer sprite;
 	float tempo = 0.3f;
 
 	void Awake()
@@ -69,11 +76,25 @@ public class PlayerAll : MonoBehaviour
 			StartCoroutine("GO");
             Destroy(collision.gameObject);
 		}
-		if(collision.gameObject.tag == "Ground")
+		else if(collision.gameObject.tag == "Espinho")
+		{
+			box.isTrigger = true;
+			life -= 0.1f;
+			StartCoroutine("GO");
+		}
+		else if(collision.gameObject.tag == "Ground")
 		{
 			jump = true;
 		}
 	}
+
+	/*void OnCollisionExit2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == "Ground")
+		{
+			jump = false;
+		}
+	}*/
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -83,9 +104,23 @@ public class PlayerAll : MonoBehaviour
 			StartCoroutine("GO");
 			Destroy(collision.gameObject);
 		}
-		if(collision.gameObject.tag == "Ground")
+		else if(collision.gameObject.tag == "Espinho")
+		{
+			box.isTrigger = true;
+			life -= 0.1f;
+			StartCoroutine("GO");
+		}
+		else if(collision.gameObject.tag == "Ground")
 		{
 			jump = true;
 		}
 	}
+
+	/*void OnTriggerExit2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Ground")
+		{
+			jump = false;
+		}
+	}*/
 }
