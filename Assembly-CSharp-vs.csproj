@@ -46,13 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CriaACria.cs" />
      <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Script\Enemy\Arvore.cs" />
      <Compile Include="Assets\Script\Enemy\Criador.cs" />
      <Compile Include="Assets\Script\Enemy\Dano.cs" />
      <Compile Include="Assets\Script\Enemy\Terrestre.cs" />
      <Compile Include="Assets\Script\Interface\MudaCena.cs" />
+     <Compile Include="Assets\Script\Interface\Pause.cs" />
      <Compile Include="Assets\Script\Player\Attack\AttackFlecha\Arco.cs" />
      <Compile Include="Assets\Script\Player\Attack\AttackFlecha\Arrow.cs" />
      <Compile Include="Assets\Script\Player\Attack\AttackFlecha\BowController.cs" />
@@ -67,6 +67,7 @@
      <Compile Include="Assets\Script\Player\PlayerAll.cs" />
      <Compile Include="Assets\Script\Props\BackgroundLua.cs" />
      <Compile Include="Assets\Script\Props\CreatedGrounded.cs" />
+     <Compile Include="Assets\Script\Props\CriaACria.cs" />
      <Compile Include="Assets\Script\Props\Destruidor.cs" />
      <Compile Include="Assets\Script\Props\SpriteRowCreator.cs" />
      <None Include="Assets\Editor\Todo\README.txt" />
