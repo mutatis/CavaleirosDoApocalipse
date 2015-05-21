@@ -7,12 +7,13 @@ public class Guerra : MonoBehaviour
 	Vector2 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	public TrailRenderer trail;
 	public BoxCollider2D box;
-
+	
 	// Use this for initialization
 	void Start () 
 	{
 		trail.enabled = false;
 		box.enabled = false;
+		trail.renderer.sortingLayerName = "UI";
 	}
 	
 	// Update is called once per frame
