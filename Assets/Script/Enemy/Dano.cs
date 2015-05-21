@@ -5,9 +5,11 @@ public class Dano : MonoBehaviour {
 
 	int tiro;
 	public SpriteRenderer sprite;
+	public BoxCollider2D box;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
 	}
 	
@@ -40,6 +42,10 @@ public class Dano : MonoBehaviour {
 			tiro += 2;
 			StartCoroutine("GO");
 		}
+		else if(collision.gameObject.tag == "Espinho")
+		{
+			box.isTrigger = true;
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +60,10 @@ public class Dano : MonoBehaviour {
 		{
 			tiro += 2;
 			StartCoroutine("GO");
+		}
+		else if(collision.gameObject.tag == "Espinho")
+		{
+			box.isTrigger = true;
 		}
 	}
 }

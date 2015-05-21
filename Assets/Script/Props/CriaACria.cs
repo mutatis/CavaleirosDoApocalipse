@@ -3,7 +3,6 @@ using System.Collections;
 
 public class CriaACria : MonoBehaviour 
 {
-
 	public GameObject creat;
 	public float x;
 
