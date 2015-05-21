@@ -53,11 +53,17 @@ public class PlayerAll : MonoBehaviour
 			sli.value = life;
 		}
 
+		if(sli.value <= 0)
+		{
+			Application.LoadLevel("MudaCena");
+		}
+
 		transform.Translate(x * Time.deltaTime, 0, 0);
 
 		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
 		{
-			rigidbody2D.velocity = new Vector2(0, jumpF);
+			rigidbody2D.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
+			//rigidbody2D.velocity = new Vector2(0, jumpF);
 			jump = false;
 		}
 	}
@@ -66,7 +72,8 @@ public class PlayerAll : MonoBehaviour
 	{
 		if(jump)
 		{
-			rigidbody2D.velocity = new Vector2(0, jumpF);
+			rigidbody2D.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
+			//rigidbody2D.velocity = new Vector2(0, jumpF);
 			jump = false;
 		}
 	}
