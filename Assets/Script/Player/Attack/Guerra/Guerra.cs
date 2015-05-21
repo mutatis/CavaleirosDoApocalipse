@@ -23,7 +23,6 @@ public class Guerra : MonoBehaviour
 			trail.enabled = true;
 			box.enabled = true;
 			pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			print (pos);
 			transform.position = pos;
 		}
 		else if(Input.GetMouseButtonUp(0))

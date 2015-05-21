@@ -11,6 +11,8 @@ public class PlayerAll : MonoBehaviour
 	public float limit;
 	public float multip;
 
+	public Animator anim;
+
 	public Slider sli;
 
 	public BoxCollider2D box;
@@ -58,6 +60,15 @@ public class PlayerAll : MonoBehaviour
 			Application.LoadLevel("MudaCena");
 		}
 
+		if(jump == true)
+		{
+			anim.SetTrigger("Run");
+		}
+		else
+		{			
+			anim.SetTrigger("Jump");
+		}
+
 		transform.Translate(x * Time.deltaTime, 0, 0);
 
 		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
@@ -73,7 +84,6 @@ public class PlayerAll : MonoBehaviour
 		if(jump)
 		{
 			rigidbody2D.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
-			//rigidbody2D.velocity = new Vector2(0, jumpF);
 			jump = false;
 		}
 	}
