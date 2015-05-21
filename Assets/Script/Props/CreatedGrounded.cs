@@ -9,13 +9,19 @@ public class CreatedGrounded : MonoBehaviour
 	public Vector2 limitY;
 	public Vector2 limitAlt;
 	public Transform pos;
+	public SpriteRowCreator[] creator;
 	float x, y;
 
 	// Use this for initialization
 	void Start () 
 	{
 		x = Random.Range(limitX.x, limitX.y);
-		
+
+		for(int i = 0; i < creator.Length; i++)
+		{
+			creator[i].CreateSprites();
+		}
+
 		if(pos.position.y < limitAlt.x)
 		{
 			y = Random.Range(0, limitY.y);
