@@ -1,3 +1,4 @@
+/Library/*
 /[Ll]ibrary/*
 /[Tt]emp/*
 /[Oo]bj/*
@@ -20,4 +21,3 @@
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 *.asset
-Library/InspectorExpandedItems.asset
