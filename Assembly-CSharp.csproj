@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\BackgroundLua.cs" />
      <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Script\Enemy\Arvore.cs" />
      <Compile Include="Assets\Script\Enemy\Criador.cs" />
@@ -64,9 +63,11 @@
      <Compile Include="Assets\Script\Player\Attack\Peste\AttackFlecha.cs" />
      <Compile Include="Assets\Script\Player\Attack\Peste\Flecha.cs" />
      <Compile Include="Assets\Script\Player\Attack\SingleMeleeAttack.cs" />
-     <Compile Include="Assets\Script\Player\Movment.cs" />
-     <Compile Include="Assets\Script\Props\Ground.cs" />
-     <Compile Include="Assets\Script\SpriteRowCreator.cs" />
+     <Compile Include="Assets\Script\Player\PlayerAll.cs" />
+     <Compile Include="Assets\Script\Props\BackgroundLua.cs" />
+     <Compile Include="Assets\Script\Props\CreatedGrounded.cs" />
+     <Compile Include="Assets\Script\Props\Destruidor.cs" />
+     <Compile Include="Assets\Script\Props\SpriteRowCreator.cs" />
      <None Include="Assets\Editor\Todo\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.5/UnityEngine.UI.dll</HintPath>

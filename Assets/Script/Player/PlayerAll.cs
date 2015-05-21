@@ -8,6 +8,8 @@ public class PlayerAll : MonoBehaviour
 
 	public float jumpF;
 	public float x;
+	public float limit;
+	public float multip;
 
 	public Slider sli;
 
@@ -20,6 +22,7 @@ public class PlayerAll : MonoBehaviour
 
 	float life = 1;
 	float tempo = 0.3f;
+	float soma;
 
 	void Awake()
 	{
@@ -29,12 +32,18 @@ public class PlayerAll : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
-	}
+		soma = limit + transform.position.x;
+	}	
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(soma < transform.position.x)
+		{
+			x *= multip;
+			soma = limit + transform.position.x;
+		}
+
 		if(sli.value > life)
 		{
 			sli.value -= 0.01f;
@@ -43,7 +52,9 @@ public class PlayerAll : MonoBehaviour
 		{
 			sli.value = life;
 		}
+
 		transform.Translate(x * Time.deltaTime, 0, 0);
+
 		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpF);

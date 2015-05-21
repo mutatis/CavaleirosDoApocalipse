@@ -14,7 +14,20 @@ public class CreatedGrounded : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+		x = Random.Range(limitX.x, limitX.y);
+		
+		if(pos.position.y < limitAlt.x)
+		{
+			y = Random.Range(0, limitY.y);
+		}
+		else if(pos.position.y > limitAlt.y)
+		{
+			y = Random.Range(limitY.x, 0);
+		}
+		else
+		{
+			y = Random.Range(limitY.x, limitY.y);
+		}
 	}
 	
 	// Update is called once per frame
@@ -27,21 +40,6 @@ public class CreatedGrounded : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			x = Random.Range(limitX.x, limitX.y);
-
-			if(pos.position.y < limitAlt.x)
-			{
-				y = Random.Range(0, limitY.y);
-			}
-			else if(pos.position.y > limitAlt.y)
-			{
-				y = Random.Range(limitY.x, 0);
-			}
-			else
-			{
-				y = Random.Range(limitY.x, limitY.y);
-			}
-
 			Instantiate(chao, new Vector3(transform.position.x + x, transform.position.y + y, 0), transform.rotation);
 		}
 	}
@@ -50,21 +48,6 @@ public class CreatedGrounded : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			x = Random.Range(limitX.x, limitX.y);
-
-			if(pos.position.y < limitAlt.x)
-			{
-				y = Random.Range(0, limitY.y);
-			}
-			else if(pos.position.y > limitAlt.y)
-			{
-				y = Random.Range(limitY.x, 0);
-			}
-			else
-			{
-				y = Random.Range(limitY.x, limitY.y);
-			}
-
 			Instantiate(chao, new Vector3(transform.position.x + x, transform.position.y + y, 0), transform.rotation);
 		}
 	}
