@@ -14,6 +14,7 @@ GameObject:
   - 50: {fileID: 5080312}
   - 114: {fileID: 11480312}
   - 82: {fileID: 8280314}
+  - 114: {fileID: 11418150}
   m_Layer: 0
   m_Name: Morte
   m_TagString: Player
@@ -115,8 +116,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 2.51999998, y: 5.98999977}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.51999998, y: 2.26999998}
+  m_Center: {x: 0, y: 1.83000004}
 --- !u!82 &8280314
 AudioSource:
   m_ObjectHideFlags: 1
@@ -190,6 +191,24 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11418150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b3d4d7385d66142870f704c6f924e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 13
+  speed: 7
+  speedIncreasePoint: 100
+  newSpeedMultiplier: 1.20000005
+  life: 1
+  canDoubleJump: 1
+  canJump: 1
 --- !u!114 &11480312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,16 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13840bda05d1847b4ec1f9cd4cb5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpF: 13
-  x: 7
-  limit: 100
-  multip: 1.20000005
-  anim: {fileID: 9580314}
-  sli: {fileID: 0}
-  box: {fileID: 6180312}
-  sprite: {fileID: 21280312}
-  jump: 1
   life: 1
+  healthSlider: {fileID: 0}
 --- !u!114 &11480314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd9824daf932de40893be76144a7226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 4
+  vel: 3
+  segue: 2
 --- !u!212 &21280312
 SpriteRenderer:
   m_ObjectHideFlags: 1

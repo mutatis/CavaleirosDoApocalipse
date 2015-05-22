@@ -46,6 +46,7 @@ GameObject:
   - 50: {fileID: 5044874}
   - 114: {fileID: 11444874}
   - 82: {fileID: 8244874}
+  - 114: {fileID: 11409654}
   m_Layer: 0
   m_Name: Peste
   m_TagString: Player
@@ -976,6 +977,24 @@ TrailRenderer:
       rgba: 229651856
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!114 &11409654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b3d4d7385d66142870f704c6f924e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 13
+  speed: 7
+  speedIncreasePoint: 100
+  newSpeedMultiplier: 1.20000005
+  life: 1
+  canDoubleJump: 0
+  canJump: 1
 --- !u!114 &11444874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -987,16 +1006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13840bda05d1847b4ec1f9cd4cb5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpF: 13
-  x: 7
-  limit: 100
-  multip: 1.20000005
-  anim: {fileID: 9544874}
-  sli: {fileID: 0}
-  box: {fileID: 6144874}
-  sprite: {fileID: 21244876}
-  jump: 1
   life: 1
+  healthSlider: {fileID: 0}
 --- !u!114 &11444876
 MonoBehaviour:
   m_ObjectHideFlags: 1
