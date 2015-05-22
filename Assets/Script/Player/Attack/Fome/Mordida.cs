@@ -41,11 +41,11 @@ public class Mordida : MonoBehaviour
 	IEnumerator Emagrecendo()
 	{
 		yield return new WaitForSeconds (1);
-		if(rig.mass >= 1)
+		if(rig.mass > 1)
 		{
 			rig.mass -= vCome;		
 		}
-		if(PlayerAll.playerTrans.x <= vel)
+		if(PlayerAll.playerTrans.x < vel)
 		{
 			PlayerAll.playerTrans.x += vVel;
 		}
