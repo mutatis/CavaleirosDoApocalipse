@@ -11,18 +11,27 @@ public class Guerra : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+
 		trail.enabled = false;
 		box.enabled = false;
 		trail.renderer.sortingLayerName = "UI";
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		if(Input.GetMouseButton(0))
 		{
-			trail.enabled = true;
-			box.enabled = true;
+            if(Time.timeScale > 0)
+            {
+                trail.enabled = true;
+                box.enabled = true;
+            }
+			else
+            {
+                trail.enabled = false;
+                box.enabled = false;
+            }
 			pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			transform.position = pos;
 		}
@@ -31,11 +40,12 @@ public class Guerra : MonoBehaviour
 			StartCoroutine("GO");
 		}
 	}
-
+    
 	IEnumerator GO()
 	{
 		yield return new WaitForSeconds (trail.time);
 		trail.enabled = false;
 		box.enabled = false;
 	}
+
 }

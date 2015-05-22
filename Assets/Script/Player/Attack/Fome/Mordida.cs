@@ -21,7 +21,7 @@ public class Mordida : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		vel = PlayerAll.playerTrans.x;
+		vel = PlayerMovement.playerMovement.speed;
 		comeu = rig.mass;
 		gorduraMin = rig.mass;
 	}
@@ -45,9 +45,9 @@ public class Mordida : MonoBehaviour
 		{
 			rig.mass -= vCome;		
 		}
-		if(PlayerAll.playerTrans.x < vel)
+		if(PlayerMovement.playerMovement.speed < vel)
 		{
-			PlayerAll.playerTrans.x += vVel;
+			PlayerMovement.playerMovement.speed += vVel;
 		}
 		StartCoroutine ("Emagrecendo");
 	}
@@ -66,7 +66,7 @@ public class Mordida : MonoBehaviour
 
 	void Bateu()
 	{
-		PlayerAll.playerTrans.x -= vVel;
+		PlayerMovement.playerMovement.speed -= vVel;
 		comeu += vCome;
 		StartCoroutine("Emagrece");			
 		StopCoroutine("Emagrecendo");

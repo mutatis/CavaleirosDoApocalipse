@@ -6,89 +6,48 @@ public class PlayerAll : MonoBehaviour
 {
 	public static PlayerAll playerTrans;
 
-	public float jumpF;
-	public float x;
-	public float limit;
-	public float multip;
+    //Parâmetros
+    public float life = 1;
 
-	public Animator anim;
+    //Componentes
+    public Slider healthSlider;
+	BoxCollider2D myBoxCollider;
+	SpriteRenderer mySpriteRenderer;
 
-	public Slider sli;
-
-	public BoxCollider2D box;
-
-	public SpriteRenderer sprite;
-
-	[HideInInspector]
-	public bool jump = true;
-
-	public float life = 1;
-	float tempo = 0.3f;
-	float soma;
+	
+	
+	float intervaloFlash = 0.3f;
+	
 
 	void Awake()
 	{
 		playerTrans = this;
 	}
 
-	// Use this for initialization
 	void Start () 
 	{
-		soma = limit + transform.position.x;
+        myBoxCollider = GetComponent<BoxCollider2D>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
 	}	
 	
-	// Update is called once per frame
 	void Update () 
 	{
-		if(soma < transform.position.x)
+		if(healthSlider.value > life)
 		{
-			x *= multip;
-			soma = limit + transform.position.x;
-		}
-
-		if(sli.value > life)
-		{
-			sli.value -= 0.01f;
+			healthSlider.value -= 0.01f;
 		}
 		else
 		{
-			sli.value = life;
-		}
-
-		if(jump == true)
-		{
-			anim.SetTrigger("Run");
-		}
-		else
-		{			
-			anim.SetTrigger("Jump");
-		}
-
-		transform.Translate(x * Time.deltaTime, 0, 0);
-
-		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
-		{
-			rigidbody2D.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
-			//rigidbody2D.velocity = new Vector2(0, jumpF);
-			jump = false;
+			healthSlider.value = life;
 		}
 	}
 
-	public void Jump()
+	IEnumerator FlashOnDamage()
 	{
-		if(jump)
-		{
-			rigidbody2D.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
-			jump = false;
-		}
-	}
-
-	IEnumerator GO()
-	{
-		sprite.color = Color.red;
-		yield return new WaitForSeconds (tempo);
-		sprite.color = Color.white;
-		StopCoroutine("GO");
+		mySpriteRenderer.color = Color.red;
+		yield return new WaitForSeconds (intervaloFlash);
+		mySpriteRenderer.color = Color.white;
+		StopCoroutine("FlashOnDamage");
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -96,54 +55,31 @@ public class PlayerAll : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			life -= 0.1f;
-			StartCoroutine("GO");
+			StartCoroutine("FlashOnDamamge");
             Destroy(collision.gameObject);
 		}
 		else if(collision.gameObject.tag == "Espinho")
 		{
-			box.isTrigger = true;
-			life -= 0.1f;
-			StartCoroutine("GO");
+			myBoxCollider.isTrigger = true;
+			life = 0f;
+			StartCoroutine("FlashOnDamage");
 		}
-		else if(collision.gameObject.tag == "Ground")
-		{
-			jump = true;
-		}
+		
 	}
-
-	/*void OnCollisionExit2D(Collision2D collision)
-	{
-		if(collision.gameObject.tag == "Ground")
-		{
-			jump = false;
-		}
-	}*/
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Enemy")
 		{
 			life -= 0.1f;
-			StartCoroutine("GO");
+			StartCoroutine("FlashOnDamage");
 			Destroy(collision.gameObject);
 		}
 		else if(collision.gameObject.tag == "Espinho")
 		{
-			box.isTrigger = true;
-			life -= 0.1f;
-			StartCoroutine("GO");
-		}
-		else if(collision.gameObject.tag == "Ground")
-		{
-			jump = true;
+			myBoxCollider.isTrigger = true;
+            life = 0f;
+			StartCoroutine("FlashOnDamage");
 		}
 	}
-
-	/*void OnTriggerExit2D(Collider2D collision)
-	{
-		if(collision.gameObject.tag == "Ground")
-		{
-			jump = false;
-		}
-	}*/
 }

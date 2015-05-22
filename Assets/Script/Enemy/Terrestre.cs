@@ -14,7 +14,7 @@ public class Terrestre : MonoBehaviour
 	void Start () 
 	{
 		Vector3 theScale = transform.localScale;
-		x = PlayerAll.playerTrans.x;
+		x = PlayerMovement.playerMovement.speed;
 		mult = Random.Range (-2, 2);
 		if(mult == 0)
 		{
@@ -43,7 +43,7 @@ public class Terrestre : MonoBehaviour
 		if(anda)
 		{
 			transform.Translate(((x / 2) * mult) * Time.deltaTime, 0, 0);
-			if(PlayerAll.playerTrans.jump && pos && tipo == 1)
+			if(PlayerMovement.playerMovement.canJump && pos && tipo == 1)
 			{
 				transform.position = new Vector3(transform.position.x, PlayerAll.playerTrans.transform.position.y, transform.position.z);
 				pos = false;

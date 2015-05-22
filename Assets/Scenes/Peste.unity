@@ -362,6 +362,7 @@ GameObject:
   - 50: {fileID: 161224622}
   - 114: {fileID: 161224621}
   - 82: {fileID: 161224620}
+  - 114: {fileID: 161224619}
   m_Layer: 0
   m_Name: Peste
   m_TagString: Player
@@ -369,6 +370,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &161224619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161224618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eadeaa8ee41f8b4a9e6c82ae86bbf8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 13
+  speed: 7
+  speedIncreasePoint: 100
+  newSpeedMultiplier: 1.20000005
+  life: 1
+  canDoubleJump: 1
+  canJump: 1
 --- !u!82 &161224620
 AudioSource:
   m_ObjectHideFlags: 0
@@ -440,16 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13840bda05d1847b4ec1f9cd4cb5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpF: 13
-  x: 7
-  limit: 100
-  multip: 1.20000005
-  anim: {fileID: 161224624}
-  sli: {fileID: 121513004}
-  box: {fileID: 161224623}
-  sprite: {fileID: 161224625}
-  jump: 1
   life: 1
+  healthSlider: {fileID: 121513004}
 --- !u!50 &161224622
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -973,7 +984,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 161224621}
+        - m_Target: {fileID: 161224619}
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -1086,17 +1097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb022d81a6d15164688d9de451c91252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionName: 
-  arrowTransform: {fileID: 0}
-  plusScore:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  arrowImpactSFX: {fileID: 8300000, guid: 26c0afa7cb1d441499bcb94bc74a4322, type: 3}
-  plusScoreEffectGameObject: {fileID: 0}
-  plusArrowEffectGameObject: {fileID: 0}
 --- !u!60 &693884766
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2783,7 +2783,7 @@ Prefab:
     - target: {fileID: 11488708, guid: fc15b4529b8b5c74f82ba041f56262ff, type: 2}
       propertyPath: delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 161224621}
+      objectReference: {fileID: 161224619}
     - target: {fileID: 22388710, guid: fc15b4529b8b5c74f82ba041f56262ff, type: 2}
       propertyPath: m_Camera
       value: 
@@ -3325,7 +3325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419fe2ca48aae0941af92f6a892e192d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePop: {fileID: 8300000, guid: 242ace1306556c447b8b5e0e508cf2a5, type: 3}
 --- !u!1 &1868905784
 GameObject:
   m_ObjectHideFlags: 0
