@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float speedIncreasePoint;
     public float newSpeedMultiplier;
-    public float life = 1;
     public bool canDoubleJump;
 
     //internal status
