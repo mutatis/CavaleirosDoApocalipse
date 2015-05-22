@@ -22,7 +22,7 @@ public class PlayerAll : MonoBehaviour
 	[HideInInspector]
 	public bool jump = true;
 
-	float life = 1;
+	public float life = 1;
 	float tempo = 0.3f;
 	float soma;
 
@@ -53,11 +53,6 @@ public class PlayerAll : MonoBehaviour
 		else
 		{
 			sli.value = life;
-		}
-
-		if(sli.value <= 0)
-		{
-			Application.LoadLevel("MudaCena");
 		}
 
 		if(jump == true)
