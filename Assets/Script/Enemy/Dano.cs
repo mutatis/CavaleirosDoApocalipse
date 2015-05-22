@@ -3,31 +3,27 @@ using System.Collections;
 
 public class Dano : MonoBehaviour {
 
-	int tiro;
-	public int life;
+	public int health;
 	public SpriteRenderer sprite;
 	public BoxCollider2D box;
+    public int scoreValue;
 
 	// Use this for initialization
 	void Start () 
 	{
-		life = Random.Range (0, 3);
-		if (life == 1)
+		health = Random.Range (0, 3);
+		if (health == 1)
 			sprite.color = Color.white;
-		else if (life == 2)
+		else if (health == 2)
 			sprite.color = Color.black;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(tiro >= life)
-		{
-			Destroy(gameObject);
-		}
 	}
 
-	IEnumerator GO()
+	IEnumerator FlashOnDamage()
 	{
 		sprite.color = Color.red;
 		yield return new WaitForSeconds(0.2f);
@@ -38,16 +34,11 @@ public class Dano : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Tiro")
 		{
-			Destroy(collision.gameObject);
-			sprite.color = Color.white;
-			tiro++;
-			StartCoroutine("GO");
+            TakeDamage(1);
 		}
 		else if(collision.gameObject.tag == "Slash")
 		{
-			sprite.color = Color.white;
-			tiro ++;
-			StartCoroutine("GO");
+            TakeDamage(1);
 		}
 		else if(collision.gameObject.tag == "Espinho")
 		{
@@ -57,22 +48,33 @@ public class Dano : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag == "Tiro")
-		{
-			sprite.color = Color.white;
-			Destroy(collision.gameObject);
-			tiro++;
-			StartCoroutine("GO");
-		}
-		else if(collision.gameObject.tag == "Slash")
-		{
-			sprite.color = Color.white;
-			tiro ++;
-			StartCoroutine("GO");
-		}
-		else if(collision.gameObject.tag == "Espinho")
-		{
-			box.isTrigger = true;
-		}
-	}
+        if(collision.gameObject.tag == "Tiro")
+        {
+            TakeDamage(1);
+        }
+        else if(collision.gameObject.tag == "Slash")
+        {
+            TakeDamage(1);
+        }
+        else if(collision.gameObject.tag == "Espinho")
+        {
+            box.isTrigger = true;
+        }
+    }
+
+    void TakeDamage(int dano) 
+    {
+        health -= dano;
+        if (health <= 0)
+        {
+            Die();
+        }
+        StartCoroutine("FlashOnDamage");
+    }
+
+    void Die()
+    {
+        PlayerAll.playerTrans.score += scoreValue;
+        Destroy(gameObject);
+    }
 }

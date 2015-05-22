@@ -8,6 +8,7 @@ public class PlayerAll : MonoBehaviour
 
     //Parâmetros
     public float life = 1;
+    public int score;
 
     //Componentes
     public Slider healthSlider;
@@ -55,7 +56,7 @@ public class PlayerAll : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			life -= 0.1f;
-			StartCoroutine("FlashOnDamamge");
+			StartCoroutine("FlashOnDamage");
             Destroy(collision.gameObject);
 		}
 		else if(collision.gameObject.tag == "Espinho")

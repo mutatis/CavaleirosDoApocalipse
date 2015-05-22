@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     //Componentes
     Animator myAnimator;
-    BoxCollider2D myBoxCollider;
 
     void Awake()
     {
@@ -30,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myAnimator = GetComponent<Animator>();
-        myBoxCollider = GetComponent<BoxCollider2D>();
         soma = speedIncreasePoint + transform.position.x;
     }
 

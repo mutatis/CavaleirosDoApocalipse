@@ -7,6 +7,7 @@ public class AtackMorte : MonoBehaviour
 	private Vector2 direction2;
 
 	public float vel;
+    public float range;
 
 	[HideInInspector]
 	public int segue = 2;
@@ -43,6 +44,7 @@ public class AtackMorte : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "PointMorte")
 		{
+            print(collision.collider.gameObject.name);
 			segue = 2;
 		}
 	}
