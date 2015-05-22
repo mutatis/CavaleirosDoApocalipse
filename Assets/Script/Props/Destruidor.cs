@@ -18,7 +18,7 @@ public class Destruidor : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag != null)
+		if(collision.gameObject.tag != "Slash")
 		{
 			Destroy (collision.gameObject);
 		}
@@ -26,7 +26,7 @@ public class Destruidor : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag != null)
+		if(collision.gameObject.tag != "Slash")
 		{
 			Destroy (collision.gameObject);
 		}

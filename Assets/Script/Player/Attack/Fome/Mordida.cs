@@ -15,6 +15,8 @@ public class Mordida : MonoBehaviour
 	float comeu;
 	float vel;
 	float gorduraMin;
+	float vCome = 0.1f;
+	float vVel = 0.5f;
 
 	// Use this for initialization
 	void Start () 
@@ -28,24 +30,26 @@ public class Mordida : MonoBehaviour
 	void Update () 
 	{
 		transform.position = PlayerAll.playerTrans.transform.position;
-		if(comeu <= gorduraMax)
-		{
-			rig.mass = comeu;
-		}
-		else
-		{
-			StartCoroutine("Emagrece");
-		}
 	}
 
 	IEnumerator Emagrece()
 	{
-		sprite.color = Color.gray;
 		yield return new WaitForSeconds(2);
-		rig.mass = gorduraMin;
-		PlayerAll.playerTrans.x = vel;
-		sprite.color = Color.white;
-		comeu = gorduraMin;
+		StartCoroutine("Emagrecendo");
+	}
+
+	IEnumerator Emagrecendo()
+	{
+		yield return new WaitForSeconds (1);
+		if(rig.mass >= 1)
+		{
+			rig.mass -= vCome;		
+		}
+		if(PlayerAll.playerTrans.x <= vel)
+		{
+			PlayerAll.playerTrans.x += vVel;
+		}
+		StartCoroutine ("Emagrecendo");
 	}
 
 	public void Attack()
@@ -60,13 +64,29 @@ public class Mordida : MonoBehaviour
 		box.enabled = false;
 	}
 
+	void Bateu()
+	{
+		PlayerAll.playerTrans.x -= vVel;
+		comeu += vCome;
+		StartCoroutine("Emagrece");			
+		StopCoroutine("Emagrecendo");
+		if(comeu <= gorduraMax)
+		{
+			rig.mass = comeu;
+		}
+		else
+		{		
+			sprite.color = Color.white;
+			comeu = gorduraMin;
+		}
+	}
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
-			PlayerAll.playerTrans.x -= 0.5f;
-			comeu += 0.1f;
+			Bateu ();
 		}
 	}
 	void OnCollisionStay2D(Collision2D collision)
@@ -74,8 +94,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
-			PlayerAll.playerTrans.x -= 0.5f;
-			comeu += 0.1f;
+			Bateu ();
 		}
 	}
 	
@@ -84,8 +103,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
-			PlayerAll.playerTrans.x -= 0.5f;
-			comeu += 0.1f;
+			Bateu ();
 		}
 	}
 	
@@ -94,8 +112,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
-			PlayerAll.playerTrans.x -= 0.5f;
-			comeu += 0.1f;
+			Bateu ();
 		}
 	}
 }

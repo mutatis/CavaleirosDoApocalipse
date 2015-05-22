@@ -11,7 +11,7 @@ public class Dano : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		life = Random.Range (1, 3);
+		life = Random.Range (0, 3);
 		if (life == 1)
 			sprite.color = Color.white;
 		else if (life == 2)
