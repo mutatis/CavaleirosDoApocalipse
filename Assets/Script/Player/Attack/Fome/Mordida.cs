@@ -13,11 +13,13 @@ public class Mordida : MonoBehaviour
 	public float gorduraMax;
 
 	float comeu;
+	float vel;
 	float gorduraMin;
 
 	// Use this for initialization
 	void Start () 
 	{
+		vel = PlayerAll.playerTrans.x;
 		comeu = rig.mass;
 		gorduraMin = rig.mass;
 	}
@@ -41,6 +43,7 @@ public class Mordida : MonoBehaviour
 		sprite.color = Color.gray;
 		yield return new WaitForSeconds(2);
 		rig.mass = gorduraMin;
+		PlayerAll.playerTrans.x = vel;
 		sprite.color = Color.white;
 		comeu = gorduraMin;
 	}
@@ -62,6 +65,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
+			PlayerAll.playerTrans.x -= 0.5f;
 			comeu += 0.1f;
 		}
 	}
@@ -70,6 +74,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
+			PlayerAll.playerTrans.x -= 0.5f;
 			comeu += 0.1f;
 		}
 	}
@@ -79,6 +84,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
+			PlayerAll.playerTrans.x -= 0.5f;
 			comeu += 0.1f;
 		}
 	}
@@ -88,6 +94,7 @@ public class Mordida : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy")
 		{
 			Destroy(collision.gameObject);
+			PlayerAll.playerTrans.x -= 0.5f;
 			comeu += 0.1f;
 		}
 	}
