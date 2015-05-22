@@ -23,6 +23,7 @@ public class Dano : MonoBehaviour {
 	{
 		if(tiro >= life)
 		{
+			PlayerAll.playerTrans.score += 1;
 			Destroy(gameObject);
 		}
 	}

@@ -10,6 +10,7 @@ public class PlayerAll : MonoBehaviour
     public float life = 1;
 
     //Componentes
+	public int score;
     public Slider healthSlider;
 	BoxCollider2D myBoxCollider;
 	SpriteRenderer mySpriteRenderer;

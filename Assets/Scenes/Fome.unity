@@ -228,6 +228,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 683963167}
+    - target: {fileID: 11490568, guid: 8a14bef2ad344114994e88474213e3ea, type: 2}
+      propertyPath: canDoubleJump
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a14bef2ad344114994e88474213e3ea, type: 2}
   m_RootGameObject: {fileID: 311431753}
@@ -271,7 +275,6 @@ MonoBehaviour:
   speed: 7
   speedIncreasePoint: 100
   newSpeedMultiplier: 1.20000005
-  life: 1
   canDoubleJump: 1
   canJump: 1
 --- !u!82 &311431755
@@ -434,6 +437,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11402550, guid: dd4d556f7d9e44e488db6885a087776b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 22402560, guid: dd4d556f7d9e44e488db6885a087776b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1634,19 +1641,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1150739712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 311431754}
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1150739712
