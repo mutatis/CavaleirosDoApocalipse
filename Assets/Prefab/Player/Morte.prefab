@@ -33,7 +33,7 @@ GameObject:
   - 50: {fileID: 5080314}
   - 212: {fileID: 21280314}
   - 61: {fileID: 6180314}
-  - 114: {fileID: 11480314}
+  - 114: {fileID: 11400890}
   m_Layer: 0
   m_Name: Foice
   m_TagString: Slash
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 2.51999998, y: 2.26999998}
+  m_Size: {x: 1.51999998, y: 1.54999995}
   m_Center: {x: 0, y: 1.83000004}
 --- !u!82 &8280314
 AudioSource:
@@ -191,6 +191,22 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1edb8f086bb058479a5ee82072352cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromTarget: 0
+  range: 9
+  speed: 25
+  minDistanceToReturn: .300000012
+  returning: 0
 --- !u!114 &11418150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,7 +222,6 @@ MonoBehaviour:
   speed: 7
   speedIncreasePoint: 100
   newSpeedMultiplier: 1.20000005
-  life: 1
   canDoubleJump: 1
   canJump: 1
 --- !u!114 &11480312
@@ -221,20 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  score: 0
   healthSlider: {fileID: 0}
---- !u!114 &11480314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd9824daf932de40893be76144a7226, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vel: 3
-  segue: 2
 --- !u!212 &21280312
 SpriteRenderer:
   m_ObjectHideFlags: 1

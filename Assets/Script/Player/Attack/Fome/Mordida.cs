@@ -18,15 +18,13 @@ public class Mordida : MonoBehaviour
 	float vCome = 0.1f;
 	float vVel = 0.5f;
 
-	// Use this for initialization
 	void Start () 
 	{
 		vel = PlayerMovement.playerMovement.speed;
 		comeu = rig.mass;
 		gorduraMin = rig.mass;
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
 		transform.position = PlayerAll.playerTrans.transform.position;
