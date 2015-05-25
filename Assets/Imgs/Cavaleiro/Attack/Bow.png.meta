@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 12d07bba8937097498344cea8f2922d0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Arc_0
+    21300002: Arc_1
+    21300004: Bow_2
+    21300006: Bow_3
+    21300008: Bow_4
+    21300010: Bow_5
+    21300012: Bow_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Arc_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 123
+        width: 56
+        height: 619
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arc_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 877
+        width: 130
+        height: 147
+      alignment: 9
+      pivot: {x: .997948766, y: .18860279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bow_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 841
+        width: 51
+        height: 65
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bow_3
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 0
+        width: 200
+        height: 147
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bow_4
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 797
+        width: 130
+        height: 147
+      alignment: 9
+      pivot: {x: -.00176978111, y: .732945859}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bow_5
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 147
+        width: 180
+        height: 147
+      alignment: 9
+      pivot: {x: .125334024, y: .000738857547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bow_6
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 294
+        width: 176
+        height: 503
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
