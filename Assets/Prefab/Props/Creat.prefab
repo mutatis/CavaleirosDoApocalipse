@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chao: {fileID: 177350, guid: 18a417b1b367c084c8564caa9ef298c9, type: 2}
   limitX: {x: 19, y: 21}
-  limitY: {x: -2, y: 2.5}
+  limitY: {x: -2, y: 1.5}
   limitAlt: {x: -3, y: -2}
 --- !u!1001 &100100000
 Prefab:

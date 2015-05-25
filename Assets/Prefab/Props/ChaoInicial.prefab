@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chao: {fileID: 177350, guid: 18a417b1b367c084c8564caa9ef298c9, type: 2}
   limitX: {x: 19, y: 22}
-  limitY: {x: -2, y: 3.5}
+  limitY: {x: -2, y: 2}
   limitAlt: {x: -4, y: -.5}
 --- !u!114 &11463196
 MonoBehaviour:
