@@ -24,11 +24,8 @@ public class AttackMorte : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         target = parent.position + origin + (direction * range);
-        print(target);
         if(!canThrow)
         {
-            
-            
             if (!returning)
             {
                 distanceFromTarget = (target - transform.position).magnitude;
@@ -58,7 +55,6 @@ public class AttackMorte : MonoBehaviour {
 
     public void Attack()
     {
-        print("art" + Time.time.ToString());
         if (canThrow)
         {
             direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
