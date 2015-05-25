@@ -11,9 +11,8 @@ public class PlayerAll : MonoBehaviour
     public int score;
 
     //Componentes
-	public int score;
     public Slider healthSlider;
-	BoxCollider2D myBoxCollider;
+    BoxCollider2D myBoxCollider;
 	SpriteRenderer mySpriteRenderer;
 
 	
