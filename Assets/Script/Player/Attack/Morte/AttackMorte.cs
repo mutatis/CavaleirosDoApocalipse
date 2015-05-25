@@ -14,16 +14,19 @@ public class AttackMorte : MonoBehaviour {
     public float minDistanceToReturn;
     public bool returning = false;
 
+    private float heightOnLaunch;
+
 	// Use this for initialization
 	void Start () {
         localOrigin = transform.localPosition;
-        origin = transform.position - transform.parent.transform.position;
+        origin = transform.position - transform.parent.position;
         parent = transform.parent;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        target = parent.position + origin + (direction * range);
+        Vector3 correctedOriginPoint = new Vector3(parent.position.x, heightOnLaunch, parent.position.y);
+        target = correctedOriginPoint + origin + (direction * range);
         if(!canThrow)
         {
             if (!returning)
@@ -62,6 +65,7 @@ public class AttackMorte : MonoBehaviour {
             
             canThrow = false;
             transform.parent = null;
+            heightOnLaunch = parent.position.y;
         }
     }
 
