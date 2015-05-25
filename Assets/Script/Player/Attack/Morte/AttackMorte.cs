@@ -52,7 +52,7 @@ public class AttackMorte : MonoBehaviour {
         }
         else
         {
-            transform.localPosition = Vector3.Slerp(transform.localPosition, localOrigin, Time.deltaTime * 15);
+            transform.localPosition = Vector3.Slerp(transform.localPosition, localOrigin, Time.deltaTime * 60);
         }
 	}
 
