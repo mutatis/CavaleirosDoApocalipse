@@ -36,7 +36,7 @@ public class Movment : MonoBehaviour
 		transform.Translate(x * Time.deltaTime, 0, 0);
 		if(Input.GetKeyDown(KeyCode.UpArrow) && jump)
 		{
-			rigidbody2D.velocity = new Vector2(0, jumpF);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpF);
 			jump = false;
 		}
 	}
@@ -45,7 +45,7 @@ public class Movment : MonoBehaviour
 	{
 		if(jump)
 		{
-			rigidbody2D.velocity = new Vector2(0, jumpF);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpF);
 			jump = false;
 		}
 	}

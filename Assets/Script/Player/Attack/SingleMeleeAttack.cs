@@ -29,7 +29,7 @@ public class SingleMeleeAttack : MonoBehaviour
 
 	        Debug.DrawLine((Vector2)transform.position, (Vector2)transform.position + new Vector2(4, 0));
 	       // Debug.DrawLine((Vector2)transform.position + new Vector2(0, 2), (Vector2)transform.position + new Vector2(18, 2));
-	        audio.Play();
+	        GetComponent<AudioSource>().Play();
 	        //Debug.DrawLine((Vector2)transform.position, (Vector2)transform.position + new Vector2(15, 3));
 			if(attack == 0)
 			{

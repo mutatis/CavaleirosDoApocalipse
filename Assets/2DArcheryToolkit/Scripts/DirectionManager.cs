@@ -55,7 +55,7 @@ public class DirectionManager : MonoBehaviour
 
 				//Get the rigidbody of the arrow
 				if (arrowRigdBody == null) {
-						arrowRigdBody = transform.rigidbody2D;
+						arrowRigdBody = transform.GetComponent<Rigidbody2D>();
 				}
 		}
 

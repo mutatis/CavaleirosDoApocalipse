@@ -281,10 +281,10 @@ public class BowController : MonoBehaviour
 				currentArrow.transform.SetParent (arrowParent);
 				///Enable the arrow's trail
 				currentArrow.transform.Find ("ArrowLowPoint").Find ("trail").gameObject.SetActive (true);
-				currentArrow.rigidbody2D.isKinematic = false;
+				currentArrow.GetComponent<Rigidbody2D>().isKinematic = false;
 				arrowComponent.launched = true;
 				///Add force to the arrow
-				currentArrow.rigidbody2D.AddForce (arrowForce, ForceMode2D.Force);
+				currentArrow.GetComponent<Rigidbody2D>().AddForce (arrowForce, ForceMode2D.Force);
 				///Play the launch sound effect
 				if (arrowSwooshSFX != null) {
 						AudioSource.PlayClipAtPoint (arrowSwooshSFX, Vector3.zero);
